@@ -3,9 +3,7 @@ package com.example.globallogicchallenge.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.globallogicchallenge.R
 import com.example.globallogicchallenge.databinding.ActivityMainBinding
 import com.example.globallogicchallenge.model.Item
 import com.example.globallogicchallenge.viewmodel.GlobalLogicViewModel
@@ -23,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
          Item ("Laptop 4", "Maecenas ornare nisl non lacus viverra, at placerat mauris iaculis. Morbi convallis varius mi, luctus bibendum quam venenatis nec. Quisque facilisis hendrerit odio, id rhoncus metus tempor cursus. Suspendisse sagittis nisl eget efficitur varius. Integer efficitur faucibus faucibus. Cras mauris mauris, molestie non velit sed, fringilla porttitor felis. Sed et ultricies eros. Nam vulputate tincidunt augue vulputate tristique. Sed libero nibh, rhoncus sollicitudin velit non, efficitur dapibus risus. In id massa at justo condimentum lacinia. Pellentesque ut sapien a eros commodo bibendum lacinia non orci. Suspendisse non lacus non augue egestas suscipit. Vivamus blandit, metus ut porttitor rutrum, ipsum turpis sagittis nisl, vestibulum blandit eros ex convallis enim.", "https://picsum.photos/400/400?image=3"),
 
-         Item ("Nam posuere purus pharetra leo accumsan, quis lacinia urna venenatis. Ut non volutpat libero. €", "Mauris eu congue lacus. Etiam vel feugiat neque, nec mollis arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec bibendum facilisis felis vitae ultricies. Nam posuere purus pharetra leo accumsan, quis lacinia urna venenatis. Ut non volutpat libero. Proin maximus efficitur fringilla. Suspendisse interdum felis fringilla fermentum maximus.", "https://picsum.photos/500/500?image=4"),
+         Item ("Nam posuere purus pharetra leo accumsan, quis lacinia urna venenatis. Ut non volutpat libero. â‚¬", "Mauris eu congue lacus. Etiam vel feugiat neque, nec mollis arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec bibendum facilisis felis vitae ultricies. Nam posuere purus pharetra leo accumsan, quis lacinia urna venenatis. Ut non volutpat libero. Proin maximus efficitur fringilla. Suspendisse interdum felis fringilla fermentum maximus.", "https://picsum.photos/500/500?image=4"),
 
 
  )  */
@@ -61,15 +59,15 @@ class MainActivity : AppCompatActivity() {
 
         val adapterItem = AdapterItemList(listaItems)
 
-        val recyclerViewPhoto = findViewById<RecyclerView>(R.id.rvListado)
+        val recyclerViewPhoto = binding.rvListado
 
-        recyclerViewPhoto?.layoutManager =
+        recyclerViewPhoto.layoutManager =
             StaggeredGridLayoutManager(
                 1,
                 StaggeredGridLayoutManager.VERTICAL
             )
 
-        recyclerViewPhoto?.adapter = adapterItem
+        recyclerViewPhoto.adapter = adapterItem
 
     }
 
